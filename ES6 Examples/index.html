@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <h1>ES6 Examples</h1>
+        <script type = "text/javascript">
+           function test(x, y, ...z) {
+               document.write(`<p>x: ${x}, y: ${y}, z: ${z}`);
+           }
+           var items = [2, 3, 4];
+           // spread items to each parameter of test & the last item is spread to rest operator
+           test(...items);
+           var anotherItem = [8, 9, 10, 11, 12];
+           test(...anotherItem);
+        </script>
+    </body>
+</html>
