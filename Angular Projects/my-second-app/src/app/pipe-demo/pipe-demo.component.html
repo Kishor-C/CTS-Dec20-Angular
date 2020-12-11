@@ -1,0 +1,14 @@
+<div>
+    <h3>
+        Name: {{firstname | lowercase}} <br />
+        Salary: {{salary | currency: 'INR'}} <br />
+        Dob: {{dob | date}} <br/>
+        Dob: {{dob | date: 'dd/MM/yyyy'}} <br/>
+        Dob: {{dob | date: 'dd/MMM/yyyy'}} <br/>
+        Dob: {{dob | date: 'dd/MMMM/yyyy'}} <br/>
+        Dob: {{dob | date: 'dd/MM/yy'}} <br/>
+        Hello: {{hello1 | json}} <br />
+        Size of name: {{firstname | findLength}} <br />
+        Person Title: {{firstname | personTitle: title}}
+    </h3>
+</div>
