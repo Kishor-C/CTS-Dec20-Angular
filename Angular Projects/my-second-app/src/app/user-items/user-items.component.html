@@ -1,0 +1,22 @@
+<div>
+    <h2>Structural Directive Demo</h2>
+    <h3 *ngIf = "message">
+        Message is {{message}}
+    </h3>
+    <h3 *ngIf = "isValid">
+        Is Valid is {{isValid}}
+    </h3>    
+    <h2>There are {{usernames.length}} elements</h2>
+    <p *ngFor = "let name of usernames">
+        Hello {{name}}
+    </p>
+    <hr />
+    <table border = "1">
+        <tr>
+            <th>Name</th><th>Age</th>
+        </tr>
+        <tr *ngFor = "let user of users">
+            <td>{{user.name}}</td><td>{{user.age}}</td>
+        </tr>
+    </table>
+</div>
