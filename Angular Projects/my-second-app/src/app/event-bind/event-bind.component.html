@@ -1,0 +1,8 @@
+<div>
+    <h2>Event Binding Demo</h2>
+    <input type = "text" #un> <br />
+    <input type = "password" #pw> <br />
+    <button (click) = "handleClick(un.value, pw.value)">Send</button>
+    <hr />
+    <h3>Username is {{username}} & Password is {{password}}</h3>
+</div>

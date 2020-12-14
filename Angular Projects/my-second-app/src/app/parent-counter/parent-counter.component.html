@@ -1,0 +1,9 @@
+<div>
+    <h3>Parent Counter Value: {{size}}</h3>
+    <h3>User Details Firstname: {{user.firstname}} and Lastname: {{user.lastname}}</h3>
+    <app-child-counter 
+        (childCounter) = "size = $event" 
+        (childUserDetail) = "user = $event">
+    </app-child-counter>
+    
+</div>
