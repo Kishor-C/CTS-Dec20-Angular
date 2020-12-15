@@ -1,25 +1,25 @@
-<div>
+<div class = "container-fluid">
     <h2>Angular Forms</h2><hr />
     <form #userForm = "ngForm" (ngSubmit) = "handleFormValues(userForm.value)">
         <label>
             Enter Username <input type = "text" name = "user" [(ngModel)] = "username" 
-            #un = "ngModel" required autocomplete="off">
-            <span style = "color:red" [hidden] = "un.valid || un.pristine">Username is mandatory</span>
+            #un = "ngModel" required autocomplete="off" class = "form-control">
+            <div class = "alert alert-danger" [hidden] = "un.valid || un.pristine">Username is mandatory</div>
         </label>
         <br />
         <label>
             Enter Password <input type = "password" name = "pass" [(ngModel)] = "password"
-            #pw = "ngModel" required>
-            <span style = "color:red" [hidden] = "pw.valid || pw.pristine">Password is mandatory</span>
+            #pw = "ngModel" required class = "form-control">
+            <div class = "alert alert-danger"  [hidden] = "pw.valid || pw.pristine">Password is mandatory</div>
         </label>
         <br />
         <label>
             Enter Phone No <input type = "number" name = "phone" [(ngModel)] = "phone"
-            #ph = "ngModel" required>
-            <span style = "color:red" [hidden] = "ph.valid || ph.pristine">Phonenumber is mandatory</span>
+            #ph = "ngModel" required class = "form-control">
+            <div class = "alert alert-danger"  [hidden] = "ph.valid || ph.pristine">Phonenumber is mandatory</div>
         </label>
         <br />
-        <input type = "submit" value = "Submit" [disabled] = "userForm.invalid">
+        <input type = "submit" class = "btn btn-primary" value = "Submit" [disabled] = "userForm.invalid">
     </form>
     <hr />
     <h3>
