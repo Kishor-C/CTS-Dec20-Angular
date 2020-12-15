@@ -1,0 +1,18 @@
+<div>
+    <h2>Angular Forms</h2><hr />
+    <form #userForm = "ngForm" (ngSubmit) = "handleFormValues(userForm.value)">
+        <label>
+            Enter Username <input type = "text" name = "user" [(ngModel)] = "username">
+        </label>
+        <br />
+        <label>
+            Enter Password <input type = "password" name = "pass" [(ngModel)] = "password">
+        </label>
+        <br />
+        <label>
+            Enter Phone No <input type = "number" name = "phone" [(ngModel)] = "phone">
+        </label>
+        <br />
+        <input type = "submit" value = "Submit">
+    </form>
+</div>
