@@ -2,17 +2,30 @@
     <h2>Angular Forms</h2><hr />
     <form #userForm = "ngForm" (ngSubmit) = "handleFormValues(userForm.value)">
         <label>
-            Enter Username <input type = "text" name = "user" [(ngModel)] = "username">
+            Enter Username <input type = "text" name = "user" [(ngModel)] = "username" 
+            #un = "ngModel" required autocomplete="off">
+            <span style = "color:red" [hidden] = "un.valid || un.pristine">Username is mandatory</span>
         </label>
         <br />
         <label>
-            Enter Password <input type = "password" name = "pass" [(ngModel)] = "password">
+            Enter Password <input type = "password" name = "pass" [(ngModel)] = "password"
+            #pw = "ngModel" required>
+            <span style = "color:red" [hidden] = "pw.valid || pw.pristine">Password is mandatory</span>
         </label>
         <br />
         <label>
-            Enter Phone No <input type = "number" name = "phone" [(ngModel)] = "phone">
+            Enter Phone No <input type = "number" name = "phone" [(ngModel)] = "phone"
+            #ph = "ngModel" required>
+            <span style = "color:red" [hidden] = "ph.valid || ph.pristine">Phonenumber is mandatory</span>
         </label>
         <br />
-        <input type = "submit" value = "Submit">
+        <input type = "submit" value = "Submit" [disabled] = "userForm.invalid">
     </form>
+    <hr />
+    <h3>
+        Username pristine: {{un.pristine}}, Valid: {{un.valid}}, Value: {{un.value}} <br />
+        Password pristine: {{pw.pristine}}, Valid: {{pw.valid}}, Value: {{pw.value}} <br />
+        Phone pristine: {{ph.pristine}}, Valid: {{ph.valid}}, Value: {{ph.value}} <br />
+        Form Valid: {{userForm.valid}}, InValid: {{userForm.invalid}}
+    </h3>
 </div>
