@@ -3,12 +3,12 @@
     <table *ngIf = "employees" class = "table">
         <thead>
             <tr>
-                <th>Id</th><th>Name</th><th>DOB</th>
+                <th>Id</th><th>Name</th><th>Salary</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor = "let e of employees">
-                <td>{{e.id}}</td><td>{{e.name}}</td><td>{{e.dob}}</td>
+                <td>{{e.id}}</td><td>{{e.name}}</td><td>{{e.salary}}</td>
             </tr>
         </tbody>
     </table>

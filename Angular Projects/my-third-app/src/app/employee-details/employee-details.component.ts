@@ -13,6 +13,7 @@ export class EmployeeDetailsComponent {
   }
 
   refresh() : void {
-    this.employees = this._service.dummyDetails();
+    this._service.fetchEmployees()
+    .subscribe(response => this.employees = response);
   }
 }

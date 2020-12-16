@@ -9,11 +9,14 @@ import { EmployeeService } from '../employee.service';
 export class EmployeeRegisterComponent  { 
   id : number = undefined;
   name : string = undefined;
-  dob : Date = undefined
+  salary : number = undefined;
+
+  message : string = undefined;
 
   constructor(private _service : EmployeeService){}
 
-  save(formValues : any) {
-    this._service.store(formValues);
+  handleSave(formValue : any) {
+    this._service.save(formValue).subscribe(response => this.message = 'Stored '+response.id);
   }
+  
 }
