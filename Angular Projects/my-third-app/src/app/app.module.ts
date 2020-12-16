@@ -7,16 +7,21 @@ import { EmployeeRegisterComponent } from './employee-register/employee-register
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { Routes, RouterModule} from '@angular/router';
+
+// configuring the path and component in routes
+let routes : Routes = [
+  {path : "", component: EmployeeRegisterComponent}, 
+  {path : "register", component: EmployeeRegisterComponent}, 
+  {path : "user-details", component: UserDetailsComponent},
+  {path : "employee-details", component: EmployeeDetailsComponent}
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    EmployeeDetailsComponent,
-    EmployeeRegisterComponent,
-    UserDetailsComponent
+  declarations: [AppComponent, EmployeeDetailsComponent, EmployeeRegisterComponent, UserDetailsComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpClientModule
+    BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
